@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 228 26% 8%;  /* #111627 */
+    --foreground: 0 0% 98%;
+    --card: 228 15% 21%;       /* #343444 */
+    --card-foreground: 0 0% 98%;
+    --popover: 228 15% 21%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 261 84% 65%;     /* Purple from logo */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 228 15% 25%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 228 15% 18%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 261 84% 65%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 228 15% 25%;
+    --input: 228 15% 25%;
+    --ring: 261 84% 65%;
+    --radius: 0.5rem;
+    
+    /* Modern theme colors */
+    --modern-primary: 247 92% 66%;
+    --modern-secondary: 267 84% 81%;
+    --modern-background: 0 0% 100%;
+    --modern-surface: 240 4.8% 95.9%;
+    --modern-text: 240 10% 3.9%;
+    
+    /* Retro theme colors */
+    --retro-primary: 120 100% 50%;
+    --retro-secondary: 60 100% 50%;
+    --retro-background: 240 100% 5%;
+    --retro-surface: 240 30% 10%;
+    --retro-text: 120 100% 90%;
+
+    /* Sidebar & chart variables required by tailwind config */
+    --sidebar-background: 240 4.8% 95.9%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-primary: 247 92% 66%;
+    --sidebar-primary-foreground: 355 7% 97%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 247 92% 66%;
+    --chart-1: 148 53% 54%;
+    --chart-2: 247 92% 66%;
+    --chart-3: 25 98% 58%;
+    --chart-4: 217 76% 55%;
+    --chart-5: 0 0% 45%;
+    --font-sans: inter, system-ui, -apple-system, sans-serif;
+    --font-serif: playfair display, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 247 92% 66%;
+    --primary-foreground: 355 7% 97%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 247 92% 66%;
+    
+    /* Modern dark theme colors */
+    --modern-primary: 247 92% 66%;
+    --modern-secondary: 267 84% 81%;
+    --modern-background: 240 10% 3.9%;
+    --modern-surface: 240 3.7% 15.9%;
+    --modern-text: 0 0% 98%;
+    
+    /* Retro dark theme colors (same as light) */
+    --retro-primary: 120 100% 50%;
+    --retro-secondary: 60 100% 50%;
+    --retro-background: 240 100% 5%;
+    --retro-surface: 240 30% 10%;
+    --retro-text: 120 100% 90%;
+  }
+  
+  /* Theme classes */
+  .theme-modern {
+    --primary: var(--modern-primary);
+    --secondary: var(--modern-secondary);
+    --background: var(--modern-background);
+    --card: var(--modern-surface);
+    --foreground: var(--modern-text);
+  }
+  
+  .theme-retro {
+    --primary: var(--retro-primary);
+    --secondary: var(--retro-secondary);
+    --background: var(--retro-background);
+    --card: var(--retro-surface);
+    --foreground: var(--retro-text);
+  }
+  
+  /* Pixelated styling for retro theme */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  
+  .retro-text {
+    font-family: var(--font-mono);
+    text-shadow: 0 0 10px currentcolor;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Smooth transitions for theme changes */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }

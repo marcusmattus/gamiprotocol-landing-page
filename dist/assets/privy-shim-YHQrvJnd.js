@@ -1,0 +1,1 @@
+import{r,k as e,J as t}from"./index-uX59TssZ.js";import{q as l,E as g,a as m,D as p}from"./index-uX59TssZ.js";function i(o){let{login:s}=r.useContext(e);return t("login",o),{login:s}}export{l as PrivyProvider,i as useLogin,g as useLogout,m as usePrivy,p as useWallets};

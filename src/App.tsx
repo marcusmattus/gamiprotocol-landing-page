@@ -21,11 +21,19 @@ function PrivyClientProvider({ children }: { children: React.ReactNode }) {
   const Provider = PrivyProvider;
   return (
     <Provider
-      appId="clq1q5dq80016mi0f3hq8h0za" // Demo app ID
+      appId={import.meta.env.VITE_PRIVY_APP_ID}
       config={{
-        loginMethods: ['email', 'wallet'],
-        appearance: { theme: 'light', accentColor: '#6366f1' },
-        embeddedWallets: { createOnLogin: 'users-without-wallets' },
+        loginMethods: ['wallet', 'email'],
+        appearance: { 
+          theme: 'light', 
+          accentColor: '#6366f1',
+        },
+        embeddedWallets: { 
+          createOnLogin: 'users-without-wallets',
+          noPromptOnSignature: false
+        },
+        defaultChain: 'solana-mainnet',
+        supportedChains: ['ethereum', 'polygon', 'base', 'arbitrum', 'solana', 'solana-mainnet', 'solana-devnet'],
       }}
     >
       {children}

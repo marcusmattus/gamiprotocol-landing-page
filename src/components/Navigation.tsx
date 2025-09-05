@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
+import { WalletConnect } from './WalletConnect';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +31,8 @@ export function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-baseline space-x-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -47,6 +48,7 @@ export function Navigation() {
                 </Link>
               ))}
             </div>
+            <WalletConnect />
           </div>
 
           {/* Mobile menu button */}
@@ -79,6 +81,9 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
+              <div className="pt-2">
+                <WalletConnect className="w-full" />
+              </div>
             </div>
           </div>
         )}

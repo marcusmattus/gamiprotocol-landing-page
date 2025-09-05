@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { usePrivy } from '../lib/privy-shim';
 import { Button } from './ui/button';
 import { Wallet, LogOut, User } from 'lucide-react';
@@ -10,15 +11,30 @@ interface WalletConnectProps {
 }
 
 export function WalletConnect({ variant = 'default', size = 'default', className }: WalletConnectProps) {
-  const { login, logout, authenticated, user } = usePrivy();
+  const { login, logout, authenticated, user, ready } = usePrivy();
 
-  const handleConnect = () => {
+  const handleConnect = useCallback(() => {
     login();
-  };
+  }, [login]);
 
-  const handleDisconnect = () => {
+  const handleDisconnect = useCallback(() => {
     logout();
-  };
+  }, [logout]);
+
+  // Show loading state while Privy is initializing
+  if (!ready) {
+    return (
+      <Button
+        disabled
+        variant={variant}
+        size={size}
+        className={cn("gap-2", className)}
+      >
+        <Wallet size={16} />
+        <span>Loading...</span>
+      </Button>
+    );
+  }
 
   if (authenticated && user) {
     return (

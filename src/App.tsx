@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { PrivyProvider } from './lib/privy-shim';
+import { HomePage } from './pages/HomePage';
+import { DocsPage } from './pages/DocsPage';
+import { WaitlistPage } from './pages/WaitlistPage';
+import { TokenomicsPage } from './pages/TokenomicsPage';
 
-// Client-only Privy wrapper to reduce build-time bundling
-function PrivyClientProvider({ children }: { children: React.ReactNode }) {
-  const [PrivyProvider, setPrivyProvider] = useState<any>(null);
-
-  useEffect(() => {
-    let mounted = true;
-    import('./lib/privy-shim')
-      .then((mod) => mounted && setPrivyProvider(() => mod.PrivyProvider))
-      .catch((err) => console.warn('Privy failed to load', err));
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  if (!PrivyProvider) return <>{children}</>;
-
-  const Provider = PrivyProvider;
+function App() {
   return (
-    <Provider
+    <PrivyProvider
       appId={import.meta.env.VITE_PRIVY_APP_ID}
       config={{
         loginMethods: ['wallet', 'email'],
@@ -36,18 +25,6 @@ function PrivyClientProvider({ children }: { children: React.ReactNode }) {
         supportedChains: ['ethereum', 'polygon', 'base', 'arbitrum', 'solana', 'solana-mainnet', 'solana-devnet'],
       }}
     >
-      {children}
-    </Provider>
-  );
-}
-import { HomePage } from './pages/HomePage';
-import { DocsPage } from './pages/DocsPage';
-import { WaitlistPage } from './pages/WaitlistPage';
-import { TokenomicsPage } from './pages/TokenomicsPage';
-
-function App() {
-  return (
-    <PrivyClientProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -58,7 +35,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
-    </PrivyClientProvider>
+    </PrivyProvider>
   );
 }
 

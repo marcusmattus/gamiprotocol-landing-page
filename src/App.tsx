@@ -19,10 +19,7 @@ function App() {
         },
         embeddedWallets: { 
           createOnLogin: 'users-without-wallets',
-          noPromptOnSignature: false
         },
-        defaultChain: 'solana-mainnet',
-        supportedChains: ['ethereum', 'polygon', 'base', 'arbitrum', 'solana', 'solana-mainnet', 'solana-devnet'],
       }}
     >
       <Router>

@@ -8,6 +8,7 @@ import { useTheme } from '../hooks/useTheme';
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { theme } = useTheme();
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -24,10 +25,20 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-sm font-bold text-white">G</span>
+              <div className={`h-8 w-8 rounded-lg flex items-center justify-center ${
+                theme === 'retro' 
+                  ? 'bg-gradient-to-br from-pink-500 to-cyan-500 border border-cyan-300' 
+                  : 'bg-gradient-to-br from-primary to-accent'
+              }`}>
+                <span className={`text-sm font-bold text-white ${
+                  theme === 'retro' ? 'font-mono' : ''
+                }`}>G</span>
               </div>
-              <span className="text-xl font-bold">Gami Protocol</span>
+              <span className={`text-xl font-bold ${
+                theme === 'retro' ? 'font-mono text-transparent bg-gradient-to-r from-pink-500 to-cyan-500 bg-clip-text' : ''
+              }`}>
+                Gami Protocol
+              </span>
             </Link>
           </div>
 

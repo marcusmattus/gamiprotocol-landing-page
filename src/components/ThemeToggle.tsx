@@ -1,53 +1,52 @@
-import { Monitor, Moon, Sun, Gamepad2, Sparkles } from 'lucide-react';
+import { Moon, Sun, Gamepad2, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from '../hooks/useTheme';
 
 export function ThemeToggle() {
-  const { theme, setTheme, toggleMode, isRetro, isDark } = useTheme();
+  const { theme, mode, setTheme, setMode, isRetro, isDark } = useTheme();
+
+  // Combined theme options: Modern Light, Modern Dark, Retro Light, Retro Dark
+  const themeOptions = [
+    { theme: 'modern', mode: 'light', label: 'Modern Light', icon: Sparkles, secondary: Sun },
+    { theme: 'modern', mode: 'dark', label: 'Modern Dark', icon: Sparkles, secondary: Moon },
+    { theme: 'retro', mode: 'light', label: 'Retro Light', icon: Gamepad2, secondary: Sun },
+    { theme: 'retro', mode: 'dark', label: 'Retro Dark', icon: Gamepad2, secondary: Moon },
+  ];
+
+  const handleThemeChange = (newTheme: 'modern' | 'retro', newMode: 'light' | 'dark') => {
+    setTheme(newTheme);
+    setMode(newMode);
+  };
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-2" role="toolbar" aria-label="Theme controls">
-      {/* Theme Toggle (Modern/Retro) */}
-      <div className="bg-card/80 backdrop-blur-sm border rounded-lg p-1 flex items-center" role="group" aria-label="Visual style">
-        <Button
-          aria-pressed={theme === 'modern'}
-          variant={theme === 'modern' ? 'default' : 'ghost'}
-          size="sm"
-          onClick={() => setTheme('modern')}
-          className={`px-3 flex items-center ${theme === 'modern' ? '' : 'hover:bg-accent'}`}
-        >
-          <Sparkles className="h-4 w-4" />
-          <span className="hidden sm:inline ml-2">Modern</span>
-        </Button>
-        <Button
-          aria-pressed={theme === 'retro'}
-          variant={theme === 'retro' ? 'default' : 'ghost'}
-          size="sm"
-          onClick={() => setTheme('retro')}
-          className={`px-3 flex items-center ${theme === 'retro' ? '' : 'hover:bg-accent'} ${isRetro ? 'retro-text' : ''}`}
-        >
-          <Gamepad2 className="h-4 w-4" />
-          <span className="hidden sm:inline ml-2">Retro</span>
-        </Button>
+    <div className="fixed top-20 left-4 z-50" role="toolbar" aria-label="Theme controls">
+      <div className="bg-card/80 backdrop-blur-sm border rounded-lg p-1 grid grid-cols-2 gap-1" role="group" aria-label="Theme selection">
+        {themeOptions.map(({ theme: optionTheme, mode: optionMode, label, icon: Icon, secondary: SecondaryIcon }) => {
+          const isActive = theme === optionTheme && mode === optionMode;
+          
+          return (
+            <Button
+              key={`${optionTheme}-${optionMode}`}
+              aria-pressed={isActive}
+              variant={isActive ? 'default' : 'ghost'}
+              size="sm"
+              onClick={() => handleThemeChange(optionTheme, optionMode)}
+              className={`px-2 py-2 flex flex-col items-center gap-1 h-auto min-w-[60px] ${
+                isActive ? '' : 'hover:bg-accent'
+              } ${optionTheme === 'retro' ? 'retro-text' : ''}`}
+              title={label}
+            >
+              <div className="flex items-center gap-1">
+                <Icon className="h-3 w-3" />
+                <SecondaryIcon className="h-3 w-3" />
+              </div>
+              <span className="text-xs leading-none">
+                {optionTheme === 'modern' ? 'Mod' : 'Ret'}
+              </span>
+            </Button>
+          );
+        })}
       </div>
-
-      {/* Dark/Light Mode Toggle */}
-      <Button
-        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-        variant="outline"
-        size="sm"
-        onClick={toggleMode}
-        className="bg-card/80 backdrop-blur-sm flex items-center"
-      >
-        {isDark ? (
-          <Sun className="h-4 w-4" />
-        ) : (
-          <Moon className="h-4 w-4" />
-        )}
-        <span className="sr-only">
-          Switch to {isDark ? 'light' : 'dark'} mode
-        </span>
-      </Button>
     </div>
   );
 }

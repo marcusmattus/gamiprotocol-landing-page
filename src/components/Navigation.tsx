@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { WalletConnect } from './WalletConnect';
+import { useTheme } from '../hooks/useTheme';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

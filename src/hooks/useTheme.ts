@@ -64,26 +64,8 @@ export function useTheme() {
     }
   }, [state]);
 
-  // Listen for system color-scheme changes and update mode accordingly
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    const handler = (e: MediaQueryListEvent) => {
-      setState(prev => ({ ...prev, mode: e.matches ? 'dark' : 'light' }));
-    };
-    try {
-      // Some browsers use addEventListener
-      if (mql.addEventListener) mql.addEventListener('change', handler as any);
-      else mql.addListener(handler as any);
-    } catch { /* noop */ }
-
-    return () => {
-      try {
-        if (mql.removeEventListener) mql.removeEventListener('change', handler as any);
-        else mql.removeListener(handler as any);
-      } catch { /* noop */ }
-    };
-  }, []);
+  // Disabled automatic system color-scheme changes to allow explicit user choice
+  // Users can now select from 4 combinations: Modern Light/Dark, Retro Light/Dark
 
   const setTheme = (theme: Theme) => setState(prev => ({ ...prev, theme }));
   const setMode = (mode: Mode) => setState(prev => ({ ...prev, mode }));

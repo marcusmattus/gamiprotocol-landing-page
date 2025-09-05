@@ -1,4 +1,4 @@
-import { ExternalLink, BookOpen, Code, Users, Zap } from 'lucide-react';
+import { ExternalLink, BookOpen, Code, Users, Zap, Network } from 'lucide-react';
 
 export function DocsPage() {
   return (
@@ -14,7 +14,7 @@ export function DocsPage() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 mb-12">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
           <div className="p-6 rounded-xl border border-border/20 bg-card/50">
             <div className="flex items-center mb-4">
               <Code className="w-6 h-6 text-primary mr-3" />
@@ -64,6 +64,32 @@ export function DocsPage() {
             </p>
             <div className="flex items-center text-primary font-medium">
               <span>Pro tips included</span>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-xl border border-border/20 bg-card/50">
+            <div className="flex items-center mb-4">
+              <Network className="w-6 h-6 text-primary mr-3" />
+              <h3 className="text-xl font-bold">MCP Documentation</h3>
+            </div>
+            <p className="text-muted-foreground mb-4">
+              Model Context Protocol integration guides for AI assistants and automated workflows with Gami Protocol.
+            </p>
+            <div className="flex items-center text-primary font-medium">
+              <span>AI-powered gaming</span>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-xl border border-border/20 bg-card/50">
+            <div className="flex items-center mb-4">
+              <Code className="w-6 h-6 text-primary mr-3" />
+              <h3 className="text-xl font-bold">MCP Server Setup</h3>
+            </div>
+            <p className="text-muted-foreground mb-4">
+              Set up MCP servers to connect AI tools with Gami Protocol APIs for automated game management and analytics.
+            </p>
+            <div className="flex items-center text-primary font-medium">
+              <span>Seamless integration</span>
             </div>
           </div>
         </div>

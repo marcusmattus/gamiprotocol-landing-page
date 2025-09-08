@@ -1,0 +1,472 @@
+{
+  "project": {
+    "name": "Gami Protocol — Playful Landing",
+    "version": "1.0.1",
+    "brand": {
+      "colors": {
+        "ink": "#111111",
+        "paper": "#FFFFFF",
+        "bgDark": "#111627",
+        "bgMuted": "#161B2E",
+
+        "mint": "#A7F3D0",
+        "lemon": "#FDE68A",
+        "bubblegum": "#F9A8D4",
+        "sky": "#93C5FD",
+        "sun": "#FCA5A5",
+        "violet": "#C4B5FD",
+        "teal": "#5EEAD4",
+        "grape": "#7C5CFF",
+
+        "textPrimary": "#101318",
+        "textOnDark": "#E6EAF6",
+        "textOnBright": "#111111",
+        "border": "#0F172A",
+
+        "cta": "#111111",
+        "ctaText": "#FFFFFF",
+        "ctaAlt": "#7C5CFF",
+        "ctaAltText": "#FFFFFF"
+      },
+      "typography": {
+        "display": "Clash Display, Sora, ui-sans-serif",
+        "body": "Inter, ui-sans-serif",
+        "scale": {
+          "eyebrow": 12,
+          "h1": 56,
+          "h2": 40,
+          "h3": 28,
+          "h4": 20,
+          "body": 16,
+          "small": 14
+        },
+        "weight": { "regular": 400, "medium": 600, "bold": 800 },
+        "lineHeights": { "tight": 1.05, "snug": 1.2, "normal": 1.55 }
+      },
+      "effects": {
+        "radiusLg": 28,
+        "radiusMd": 18,
+        "radiusSm": 12,
+        "stickerShadow": "6px 6px 0 #111111",
+        "cardShadow": "0 12px 30px rgba(0,0,0,0.18)",
+        "focusRing": "0 0 0 3px rgba(124,92,255,0.5)"
+      },
+      "patterns": {
+        "squiggle": "ASSET_URL_SQUIGGLE_SVG",
+        "dots": "ASSET_URL_DOTS_SVG",
+        "grid": "ASSET_URL_GRID_SVG",
+        "blob1": "ASSET_URL_BLOB1_SVG",
+        "blob2": "ASSET_URL_BLOB2_SVG"
+      },
+      "logo": {
+        "primary": "ASSET_URL_GAMI_LOGO",
+        "mark": "ASSET_URL_GAMI_MARK"
+      }
+    },
+    "layout": { "maxWidth": 1160, "gutter": 24, "gridCols": 12, "sectionPY": 96, "containerPX": 20 },
+    "nav": {
+      "style": "pill",
+      "logoAlt": "Gami Protocol",
+      "links": [
+        { "id": "docs", "label": "Docs", "href": "LINK_DOCS" },
+        { "id": "sdks", "label": "SDKs", "href": "LINK_SDKS" },
+        { "id": "roadmap", "label": "Roadmap", "href": "#roadmap" },
+        { "id": "community", "label": "Community", "href": "#community" }
+      ],
+      "cta": { "id": "nav-cta", "label": "Get Started", "href": "LINK_APP" }
+    }
+  },
+
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "style": {
+        "bg": "split-bright",
+        "bgLeft": "bubblegum",
+        "bgRight": "sky",
+        "overlayPattern": "squiggle",
+        "rounded": "radiusLg"
+      },
+      "content": {
+        "eyebrow": "Gami Protocol",
+        "title": "Learn while you earn.",
+        "subtitle": "A playful, cross-chain gamification layer — universal wallet, XP engine, and reward orchestration that turn actions into on-chain value.",
+        "badges": [
+          { "text": "Solana · Base · Polygon · Bitcoin L3", "variant": "sticker" },
+          { "text": "LayerZero · Wormhole · Hyperlane", "variant": "sticker" }
+        ],
+        "primaryCTA": { "label": "Get Started", "href": "LINK_APP", "variant": "solid-black" },
+        "secondaryCTA": { "label": "Read Whitepaper", "href": "LINK_WHITEPAPER", "variant": "outline" }
+      },
+      "media": {
+        "type": "blob-mosaic",
+        "blobs": [
+          { "bg": "lemon", "icon": "icon-wallet" },
+          { "bg": "mint", "icon": "icon-chain" },
+          { "bg": "violet", "icon": "icon-sparkles" }
+        ],
+        "alt": "Playful Gami cross-chain illustration"
+      }
+    },
+
+    {
+      "id": "what-is",
+      "type": "split-feature",
+      "style": { "bg": "lemon", "pattern": "dots", "rounded": "radiusLg" },
+      "title": "Grow together",
+      "paragraph": "Gami is a decentralised engagement layer where apps reward meaningful actions with XP and NFTs. Your universal wallet tracks progress across chains; our XP engine scores events and orchestrates rewards you actually own.",
+      "benefitsGrid": {
+        "cards": [
+          {
+            "title": "Cross-chain interop",
+            "text": "One identity, many chains. Bridge XP and rewards with consistent logic.",
+            "bg": "mint",
+            "icon": "icon-chain",
+            "variant": "sticker"
+          },
+          {
+            "title": "Universal wallet",
+            "text": "Smart Accounts + MPC for secure, gas-abstracted experiences.",
+            "bg": "sky",
+            "icon": "icon-wallet",
+            "variant": "sticker"
+          },
+          {
+            "title": "Game-native UX",
+            "text": "Quests, levels, badges, and trait upgrades that keep users engaged.",
+            "bg": "bubblegum",
+            "icon": "icon-gamepad",
+            "variant": "sticker"
+          }
+        ]
+      },
+      "cta": { "label": "Learn the basics", "href": "LINK_BLOG_INTRO", "variant": "chip" }
+    },
+
+    {
+      "id": "starters",
+      "type": "card-row",
+      "title": "Starters, start here",
+      "subtitle": "Quick reads, code samples, and one-click sandboxes.",
+      "cards": [
+        {
+          "title": "Spin up a quest in 5 minutes",
+          "text": "Create a quest, set XP, mint a reward — ship fast.",
+          "cta": { "label": "Open quickstart", "href": "LINK_API_DOCS" },
+          "badge": "Guide",
+          "bg": "sun",
+          "media": "ASSET_URL_CARD1"
+        },
+        {
+          "title": "Build a wallet action",
+          "text": "Session keys, gas abstraction, social recovery.",
+          "cta": { "label": "View wallet docs", "href": "LINK_WALLET_DOCS" },
+          "badge": "How-to",
+          "bg": "mint",
+          "media": "ASSET_URL_CARD2"
+        },
+        {
+          "title": "Bridge XP across chains",
+          "text": "Adapters for LayerZero, Wormhole, Hyperlane.",
+          "cta": { "label": "See adapters", "href": "LINK_ADAPTER_GUIDE" },
+          "badge": "Code",
+          "bg": "violet",
+          "media": "ASSET_URL_CARD3"
+        }
+      ]
+    },
+
+    {
+      "id": "core-components",
+      "type": "accordion-stickers",
+      "title": "Core Components",
+      "items": [
+        {
+          "label": "Universal Wallet (SCA & MPC)",
+          "accent": "sky",
+          "content": {
+            "text": "Smart Contract Accounts and MPC enable secure key management and gas-abstracted actions across chains.",
+            "bullets": [
+              "MPC with social recovery",
+              "Session keys & sponsor gas",
+              "Supports Solana, Base, Polygon, Bitcoin L3"
+            ],
+            "links": [
+              { "label": "Wallet docs", "href": "LINK_WALLET_DOCS" },
+              { "label": "Wallet SDK", "href": "LINK_SDK_WALLET" }
+            ]
+          }
+        },
+        {
+          "label": "XP Engine",
+          "accent": "lemon",
+          "content": {
+            "text": "Ingest events, score XP with deterministic rules, and roll back if needed.",
+            "bullets": ["REST/Webhooks/GraphQL", "Deterministic calc + rollback", "Audit trails & replays"],
+            "diagram": "ASSET_URL_XP_FLOW",
+            "links": [
+              { "label": "XP rules", "href": "LINK_XP_RULES" },
+              { "label": "API guide", "href": "LINK_API_XP" }
+            ]
+          }
+        },
+        {
+          "label": "Reward Orchestration",
+          "accent": "bubblegum",
+          "content": {
+            "text": "Mint NFTs, upgrade traits, or drop tokens when XP thresholds or quests are met.",
+            "bullets": ["NFT mints & upgrades", "Token drops/swaps", "Partner marketplaces"],
+            "links": [
+              { "label": "Rewards SDK", "href": "LINK_SDK_REWARDS" },
+              { "label": "Partner examples", "href": "LINK_PARTNER_CASES" }
+            ]
+          }
+        },
+        {
+          "label": "Cross-Chain Bridging",
+          "accent": "mint",
+          "content": {
+            "text": "Adapters for LayerZero, Wormhole, and Hyperlane with consistency checks and retries.",
+            "bullets": ["Idempotent handlers", "Retry on transient failures", "Consistency proofs & fallbacks"],
+            "links": [
+              { "label": "Bridging overview", "href": "LINK_BRIDGING_OVERVIEW" },
+              { "label": "Adapter code", "href": "LINK_GITHUB_ADAPTERS" }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "tech-infra",
+      "type": "tech-grid",
+      "title": "Technology & Infrastructure",
+      "style": { "bg": "paper", "pattern": "grid" },
+      "grid": [
+        { "label": "Backend", "items": ["Node.js services", "Rust microservices", "Worker queues"] },
+        { "label": "Data", "items": ["Postgres", "Redis", "BigQuery"] },
+        { "label": "APIs", "items": ["REST", "GraphQL", "WebSockets"] },
+        { "label": "Observability", "items": ["OpenTelemetry", "Prometheus/Grafana", "Status page"] },
+        { "label": "Security", "items": ["MPC + SCA", "Audit logs", "RBAC"] }
+      ],
+      "statusLinks": [
+        { "label": "System Status", "href": "LINK_STATUS" },
+        { "label": "Security Overview", "href": "LINK_SECURITY" }
+      ]
+    },
+
+    {
+      "id": "dev-partners",
+      "type": "cards",
+      "title": "Developer & Partner Resources",
+      "cards": [
+        {
+          "icon": "icon-code",
+          "title": "SDKs & APIs",
+          "text": "Web, mobile, and bot SDKs with typed clients and quickstarts.",
+          "links": [
+            { "label": "GitHub", "href": "LINK_GITHUB" },
+            { "label": "API Docs", "href": "LINK_API_DOCS" }
+          ],
+          "bg": "sky"
+        },
+        {
+          "icon": "icon-bridge",
+          "title": "Cross-Chain Adapters",
+          "text": "Integrate LayerZero, Wormhole, or Hyperlane with minimal boilerplate.",
+          "links": [
+            { "label": "Adapter Guide", "href": "LINK_ADAPTER_GUIDE" },
+            { "label": "Examples", "href": "LINK_EXAMPLES" }
+          ],
+          "bg": "lemon"
+        },
+        {
+          "icon": "icon-handshake",
+          "title": "Join the Ecosystem",
+          "text": "Co-build quests, rewards, and on-chain activations.",
+          "links": [
+            { "label": "Partner Onboarding", "href": "LINK_PARTNER_ONBOARD" },
+            { "label": "Contact Us", "href": "LINK_CONTACT" }
+          ],
+          "bg": "bubblegum"
+        }
+      ]
+    },
+
+    {
+      "id": "level-up",
+      "type": "grid-quotes",
+      "title": "Looking to level up?",
+      "subtitle": "Browse ideas and templates to accelerate your launch.",
+      "cards": [
+        { "quote": "Ship your first quest this week.", "author": "Template • Quest Starter", "bg": "mint" },
+        { "quote": "Bridge XP without breaking things.", "author": "Template • Cross-chain", "bg": "violet" },
+        { "quote": "Spin up a simple on-chain reward.", "author": "Template • Rewards", "bg": "sky" },
+        { "quote": "Add levels, badges, and streaks.", "author": "Template • Progression", "bg": "lemon" },
+        { "quote": "Run an airdrop with guardrails.", "author": "Template • Tokenomics", "bg": "bubblegum" },
+        { "quote": "Hook up analytics & alerts.", "author": "Template • Observability", "bg": "sun" }
+      ]
+    },
+
+    {
+      "id": "roadmap",
+      "type": "timeline",
+      "title": "Roadmap & Updates",
+      "style": { "bg": "bgDark", "text": "textOnDark", "pattern": "squiggle" },
+      "milestones": [
+        { "date": "Q4 2025", "title": "Development Sprint", "desc": "XP engine + wallet adapters feature-complete; partner pilots live." },
+        { "date": "Q1 2026", "title": "Mainnet Launch", "desc": "Audits published, public mainnet, ecosystem rewards live." },
+        { "date": "H1 2026", "title": "Ecosystem Growth", "desc": "More adapters, marketplace partners, governance bootstrap." }
+      ],
+      "links": [
+        { "label": "Changelog", "href": "LINK_CHANGELOG" },
+        { "label": "Release Notes", "href": "LINK_RELEASES" },
+        { "label": "Subscribe", "href": "LINK_SUBSCRIBE" }
+      ]
+    },
+
+    {
+      "id": "community",
+      "type": "community",
+      "title": "Share your work. Someone out there needs it.",
+      "cta": { "label": "Join Discord", "href": "LINK_DISCORD", "variant": "solid-black" },
+      "links": [
+        { "label": "Twitter/X", "href": "LINK_TWITTER" },
+        { "label": "Forum", "href": "LINK_FORUM" }
+      ],
+      "faqs": [
+        { "q": "How does the universal wallet work?", "a": "SCA + MPC with gas abstraction and multi-chain support." },
+        { "q": "Can I bridge XP across chains?", "a": "Yes — via LayerZero, Wormhole, or Hyperlane adapters with retries and proofs." },
+        { "q": "What rewards can I earn?", "a": "XP unlocks NFTs, token drops, and trait upgrades based on quests and thresholds." }
+      ],
+      "support": { "email": "support@gamiprotocol.xyz", "ticketLink": "LINK_SUPPORT_TICKET" }
+    },
+
+    {
+      "id": "footer",
+      "type": "footer",
+      "style": { "bg": "bubblegum" },
+      "columns": [
+        {
+          "heading": "Resources",
+          "links": [
+            { "label": "Documentation", "href": "LINK_DOCS" },
+            { "label": "GitHub", "href": "LINK_GITHUB" },
+            { "label": "Whitepaper", "href": "LINK_WHITEPAPER" }
+          ]
+        },
+        {
+          "heading": "Company",
+          "links": [
+            { "label": "Terms of Service", "href": "LINK_TOS" },
+            { "label": "Privacy Policy", "href": "LINK_PRIVACY" }
+          ]
+        },
+        {
+          "heading": "Social",
+          "links": [
+            { "label": "Discord", "href": "LINK_DISCORD" },
+            { "label": "Twitter/X", "href": "LINK_TWITTER" }
+          ]
+        }
+      ],
+      "copyright": "© 2025 Gami Protocol"
+    }
+  ],
+
+  "components": {
+    "button": {
+      "variants": {
+        "solid-black": { "bg": "cta", "text": "ctaText", "radius": "radiusSm", "shadow": "stickerShadow" },
+        "outline": { "bg": "paper", "border": "ink", "text": "ink", "radius": "radiusSm" },
+        "chip": { "bg": "violet", "text": "textOnBright", "radius": 999 }
+      }
+    },
+    "stickerCard": {
+      "padding": 22,
+      "radius": "radiusLg",
+      "shadow": "stickerShadow",
+      "border": "ink"
+    },
+    "speechBubble": {
+      "radius": "radiusMd",
+      "tail": "right",
+      "border": "ink",
+      "shadow": "stickerShadow"
+    },
+    "avatar": { "radius": 999, "border": "ink" },
+    "iconSet": [
+      "icon-wallet", "icon-chain", "icon-sparkles", "icon-gamepad", "icon-code", "icon-bridge", "icon-handshake"
+    ]
+  },
+
+  "accessibility": {
+    "contrastMin": 4.5,
+    "focusVisible": true,
+    "ariaLabels": {
+      "hero-cta": "Open Gami Protocol app",
+      "hero-whitepaper": "Read the Gami Protocol whitepaper"
+    }
+  },
+
+  "analytics": {
+    "events": [
+      { "id": "evt_hero_get_started", "on": "click", "selector": "#hero [data-cta='primary']" },
+      { "id": "evt_whitepaper", "on": "click", "selector": "#hero [data-cta='secondary']" },
+      { "id": "evt_subscribe", "on": "submit", "selector": "#subscribe-form" }
+    ]
+  },
+
+  "placeholders_to_replace": {
+    "LINK_APP": "https://app.gamiprotocol.xyz",
+    "LINK_WHITEPAPER": "https://app.gamiprotocol.xyz/whitepaper.pdf",
+    "LINK_DOCS": "https://docs.gamiprotocol.xyz",
+    "LINK_SDKS": "https://github.com/gami-protocol/sdk",
+    "LINK_BLOG_INTRO": "https://blog.gamiprotocol.xyz/what-is-gami",
+    "LINK_WALLET_DOCS": "https://docs.gamiprotocol.xyz/wallet",
+    "LINK_SDK_WALLET": "https://github.com/gami-protocol/wallet-sdk",
+    "LINK_XP_RULES": "https://docs.gamiprotocol.xyz/xp/rules",
+    "LINK_API_XP": "https://docs.gamiprotocol.xyz/xp/api",
+    "LINK_SDK_REWARDS": "https://github.com/gami-protocol/rewards-sdk",
+    "LINK_PARTNER_CASES": "https://blog.gamiprotocol.xyz/case-studies",
+    "LINK_BRIDGING_OVERVIEW": "https://docs.gamiprotocol.xyz/bridging",
+    "LINK_GITHUB_ADAPTERS": "https://github.com/gami-protocol/adapters",
+    "LINK_STATUS": "https://status.gamiprotocol.xyz",
+    "LINK_SECURITY": "https://docs.gamiprotocol.xyz/security",
+    "LINK_GITHUB": "https://github.com/gami-protocol",
+    "LINK_API_DOCS": "https://docs.gamiprotocol.xyz/api",
+    "LINK_ADAPTER_GUIDE": "https://docs.gamiprotocol.xyz/adapters",
+    "LINK_EXAMPLES": "https://github.com/gami-protocol/examples",
+    "LINK_PARTNER_ONBOARD": "https://partners.gamiprotocol.xyz",
+    "LINK_CONTACT": "mailto:hello@gamiprotocol.xyz",
+    "LINK_CHANGELOG": "https://github.com/gami-protocol/gami/releases",
+    "LINK_RELEASES": "https://github.com/gami-protocol/gami/releases",
+    "LINK_SUBSCRIBE": "https://gamiprotocol.xyz/subscribe",
+    "LINK_DISCORD": "https://discord.gg/gami",
+    "LINK_TWITTER": "https://twitter.com/gamiprotocol",
+    "LINK_FORUM": "https://forum.gamiprotocol.xyz",
+    "LINK_SUPPORT_TICKET": "https://support.gamiprotocol.xyz",
+
+    "ASSET_URL_GAMI_LOGO": "https://assets.gami/brand/gami-logo.svg",
+    "ASSET_URL_GAMI_MARK": "https://assets.gami/brand/gami-mark.svg",
+    "ASSET_URL_XP_FLOW": "https://assets.gami/diagrams/xp-flow.png",
+    "ASSET_URL_CARD1": "https://assets.gami/art/card-quest.png",
+    "ASSET_URL_CARD2": "https://assets.gami/art/card-wallet.png",
+    "ASSET_URL_CARD3": "https://assets.gami/art/card-bridge.png",
+    "ASSET_URL_SQUIGGLE_SVG": "https://assets.gami/patterns/squiggle.svg",
+    "ASSET_URL_DOTS_SVG": "https://assets.gami/patterns/dots.svg",
+    "ASSET_URL_GRID_SVG": "https://assets.gami/patterns/grid.svg",
+    "ASSET_URL_BLOB1_SVG": "https://assets.gami/patterns/blob1.svg",
+    "ASSET_URL_BLOB2_SVG": "https://assets.gami/patterns/blob2.svg"
+  },
+
+  "responsive": {
+    "breakpoints": { "sm": 640, "md": 768, "lg": 1024, "xl": 1280 },
+    "rules": [
+      { "selector": "h1", "md": { "fontSize": 64 }, "sm": { "fontSize": 40 } },
+      { "selector": ".hero", "md": { "layout": "two-col" }, "sm": { "layout": "stack" } },
+      { "selector": ".grid-3", "md": { "columns": 3 }, "sm": { "columns": 1 } }
+    ]
+  }
+}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useTheme } from '../hooks/useTheme';
 import gamiLogo from '../assets/gami-logo.svg';
+import { BrandIcons } from './BrandIcons';
 
 export function Hero() {
   const { isRetro } = useTheme();
@@ -38,10 +39,10 @@ export function Hero() {
         <div className="max-w-5xl mx-auto space-y-12">
           {/* Logo */}
           <div className="flex justify-center">
-            <img 
-              src={gamiLogo} 
-              alt="Gami Protocol" 
-              className="h-32 md:h-40 w-auto"
+            <img
+              src={gamiLogo}
+              alt="Gami Protocol"
+              className="h-32 md:h-40 w-auto drop-shadow-lg"
             />
           </div>
 
@@ -91,6 +92,8 @@ export function Hero() {
               </div>
             ))}
           </div>
+
+          <BrandIcons />
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">

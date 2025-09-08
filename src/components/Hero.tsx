@@ -24,6 +24,16 @@ export function Hero() {
         )}
       </div>
 
+      {/* Decorative color blocks */}
+      {!isRetro && (
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="absolute -top-8 left-4 w-32 h-32 bg-pink-300 rounded-lg rotate-6" />
+          <div className="absolute top-24 -right-8 w-40 h-40 bg-yellow-200 rounded-full" />
+          <div className="absolute bottom-16 left-8 w-28 h-28 bg-cyan-200 rounded-3xl rotate-12" />
+          <div className="absolute -bottom-10 right-20 w-36 h-36 bg-violet-300 rounded-lg rotate-3" />
+        </div>
+      )}
+
       <div className="container px-4 mx-auto text-center relative z-10">
         <div className="max-w-5xl mx-auto space-y-12">
           {/* Logo */}
@@ -54,25 +64,25 @@ export function Hero() {
           {/* Key Features */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Shield, label: 'Universal Wallet', desc: 'SCA & MPC Security' },
-              { icon: Zap, label: 'XP Engine', desc: 'Event-Driven Rewards' },
-              { icon: Globe, label: 'Cross-Chain', desc: 'Multi-Network Support' },
-              { icon: Wallet, label: 'NFT Rewards', desc: 'Dynamic Minting' }
-            ].map(({ icon: Icon, label, desc }) => (
+              { icon: Shield, label: 'Universal Wallet', desc: 'SCA & MPC Security', color: 'bg-pink-300' },
+              { icon: Zap, label: 'XP Engine', desc: 'Event-Driven Rewards', color: 'bg-yellow-200' },
+              { icon: Globe, label: 'Cross-Chain', desc: 'Multi-Network Support', color: 'bg-cyan-200' },
+              { icon: Wallet, label: 'NFT Rewards', desc: 'Dynamic Minting', color: 'bg-violet-300' }
+            ].map(({ icon: Icon, label, desc, color }) => (
               <div
                 key={label}
-                className={`flex flex-col items-center gap-3 p-6 rounded-lg bg-card/80 border hover:bg-card transition-colors ${
+                className={`flex flex-col items-center gap-3 p-6 rounded-xl text-gray-900 ${color} ${
                   isRetro ? 'pixelated' : ''
                 }`}
               >
-                <Icon className={`h-10 w-10 text-primary ${isRetro ? 'pixelated' : ''}`} />
+                <Icon className={`h-10 w-10 ${isRetro ? 'pixelated' : ''}`} />
                 <div className="text-center">
-                  <h3 className={`text-sm font-semibold mb-1 ${
+                  <h3 className={`text-base font-semibold mb-1 ${
                     isRetro ? 'font-mono' : ''
                   }`}>
                     {label}
                   </h3>
-                  <p className={`text-xs text-muted-foreground ${
+                  <p className={`text-sm ${
                     isRetro ? 'font-mono' : ''
                   }`}>
                     {desc}
